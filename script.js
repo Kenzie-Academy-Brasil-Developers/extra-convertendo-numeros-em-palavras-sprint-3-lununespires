@@ -44,7 +44,7 @@ const centenas = [
   "novecentos",
 ];
 
-const milhares = ["hum mil", "dois mil"];
+const milhares = ["hum mil"];
 
 function numbersToWords(number) {
   if (number.length === 1) {
@@ -152,14 +152,18 @@ function numbersToWords(number) {
         number[2] == "8" ||
         number[2] == "9")
     ) {
-      return "Cento e " + dezUnidades[parseInt(number[2])];
-    } else if (number[0] == "1" && number[1] != "1" && number[2] != "0") {
-      return (
-        "Cento e " +
-        dezenas[parseInt(number[1] - 2)] +
-        " e " +
-        unidades[parseInt(number[2])]
-      );
+      return "Cento e " + dezUnidades[parseInt(number[2] - 1)];
+    } else if (number[0] == "1" && number[1] != "1") {
+      if (number[2] === "0") {
+        return "Cento e " + dezenas[parseInt(number[1] - 2)];
+      } else {
+        return (
+          "Cento e " +
+          dezenas[parseInt(number[1] - 2)] +
+          " e " +
+          unidades[parseInt(number[2])]
+        );
+      }
     }
   } else if (number.length === 4) {
     if (
@@ -172,10 +176,14 @@ function numbersToWords(number) {
     }
   }
 }
+
 console.log(numbersToWords("1"));
 console.log(numbersToWords("15"));
+console.log(numbersToWords("20"));
 console.log(numbersToWords("56"));
+console.log(numbersToWords("115"));
 console.log(numbersToWords("120"));
+console.log(numbersToWords("121"));
 console.log(numbersToWords("200"));
 console.log(numbersToWords("999"));
 console.log(numbersToWords("1000"));
