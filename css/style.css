@@ -1,15 +1,14 @@
-:root {
-  --color_principal: #167d85;
-}
-
 body {
   margin: 50px;
 }
-.logo img {
-  border-radius: 100%;
-  border: 5px solid lightgray;
-  padding: 5px;
-  margin: 10px;
-  width: 150px;
-  filter: grayscale(90%);
+
+header {
+  margin: 30px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+p {
+  margin: 15px 50px;
+  font-size: 1.5rem;
 }

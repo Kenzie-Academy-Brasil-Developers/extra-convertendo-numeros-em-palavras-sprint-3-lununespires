@@ -177,6 +177,22 @@ function numbersToWords(number) {
   }
 }
 
+function showResults(number, results) {
+  let newParag = document.createElement("p");
+  newParag.innerHTML = `${number}: ${results}`;
+  document.body.appendChild(newParag);
+}
+showResults(1, numbersToWords("1"));
+showResults(15, numbersToWords("15"));
+showResults(20, numbersToWords("20"));
+showResults(56, numbersToWords("56"));
+showResults(115, numbersToWords("115"));
+showResults(120, numbersToWords("120"));
+showResults(121, numbersToWords("121"));
+showResults(200, numbersToWords("200"));
+showResults(999, numbersToWords("999"));
+showResults(1000, numbersToWords("1000"));
+
 console.log(numbersToWords("1"));
 console.log(numbersToWords("15"));
 console.log(numbersToWords("20"));
